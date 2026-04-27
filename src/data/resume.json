@@ -14,6 +14,56 @@
     "Cloud & DevOps": "AWS (EC2, S3, CloudFront, Load Balancer)",
     "Tools & Platforms": "Git, Jenkins, JIRA, SonarQube, Postman"
   },
+  "proficiencyRatings": [
+    {
+      "category": "Frontend",
+      "items": [
+        { "name": "HTML", "rating": 3 },
+        { "name": "CSS", "rating": 3 },
+        { "name": "JavaScript", "rating": 3.5 },
+        { "name": "React.js", "rating": 3.5 }
+      ]
+    },
+    {
+      "category": "Backend",
+      "items": [
+        { "name": "Node.js", "rating": 3 },
+        { "name": "Express.js", "rating": 3 },
+        { "name": "REST APIs", "rating": 3.5 },
+        { "name": "PHP", "rating": 4 },
+        { "name": "Laravel", "rating": 3 },
+        { "name": "Codeigniter", "rating": 3 }
+      ]
+    },
+    {
+      "category": "Database",
+      "items": [
+        { "name": "MySQL", "rating": 3.5 },
+        { "name": "MongoDB", "rating": 3 }
+      ]
+    },
+    {
+      "category": "Tools",
+      "items": [
+        { "name": "Copilot", "rating": 3 },
+        { "name": "Cursor", "rating": 3 },
+        { "name": "Git", "rating": 4 },
+        { "name": "Jenkins", "rating": 3 },
+        { "name": "JIRA", "rating": 3 },
+        { "name": "Postman", "rating": 3 }
+      ]
+    },
+    {
+      "category": "Cloud & Devops",
+      "items": [
+        {
+          "name": "AWS",
+          "rating": 2.5,
+          "details": ["EC2", "S3", "CloudFront", "Load Balancer"]
+        }
+      ]
+    }
+  ],
   "experience": [
     {
       "company": "Tata Consultancy Services",

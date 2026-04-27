@@ -40,7 +40,7 @@ a:hover {
 }
 
 .page {
-  max-width: 980px;
+  max-width: 1100px;
   margin: 40px auto;
   padding: 0 16px 28px;
 }
@@ -156,7 +156,7 @@ a:hover {
 
 .hero-summary {
   margin-top: 12px;
-  color: #d5deea;
+  color: var(--text);
 }
 
 .hero-right {
@@ -204,20 +204,106 @@ h3 {
   grid-template-columns: 1fr 1fr;
 }
 
+.content-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 270px 1fr;
+  align-items: start;
+}
+
+.left-column {
+  position: sticky;
+  top: 14px;
+}
+
 .skills-grid {
   display: grid;
   gap: 10px;
 }
 
 .skill-card {
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  padding: 12px;
-  background: rgba(255, 255, 255, 0.01);
+  border: none;
+  border-radius: 0;
+  padding: 2px 0 10px;
+  background: transparent;
+}
+
+.skill-card + .skill-card {
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
 }
 
 .skill-card p {
-  color: #d5deea;
+  color: var(--text);
+}
+
+.skill-card h3 {
+  font-size: 1.06rem;
+  margin-bottom: 8px;
+}
+
+.proficiency-groups {
+  display: grid;
+  gap: 10px;
+}
+
+.rating-list {
+  display: grid;
+  gap: 8px;
+}
+
+.rating-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.rating-item p {
+  margin-bottom: 0;
+  font-size: 0.93rem;
+}
+
+.rating-line {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  justify-content: flex-end;
+}
+
+.stars {
+  position: relative;
+  display: inline-block;
+  letter-spacing: 1px;
+  line-height: 1;
+}
+
+.stars::before {
+  content: "★★★★★";
+  color: #7a8fa8;
+}
+
+.stars::after {
+  content: "★★★★★";
+  color: #f5b301;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: var(--rating, 0%);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.rating-subitems {
+  grid-column: 1 / -1;
+  color: var(--muted);
+  font-size: 0.83rem;
+  margin-top: 3px;
+}
+
+.rating-text {
+  color: var(--muted);
+  font-size: 0.85rem;
 }
 
 .contact-panel p {
@@ -254,6 +340,14 @@ li {
 
   .hero-right {
     justify-content: flex-start;
+  }
+
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .left-column {
+    position: static;
   }
 
   .split {

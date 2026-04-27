@@ -10,6 +10,15 @@ function Section({ title, children }) {
   );
 }
 
+function RatingStars({ value }) {
+  const width = `${(value / 5) * 100}%`;
+  return (
+    <div className="rating-line">
+      <span className="stars" style={{ "--rating": width }} aria-hidden="true" />
+    </div>
+  );
+}
+
 export default function App({ data }) {
   const { theme, setTheme } = useTheme();
   const profilePicSrc =
@@ -19,11 +28,12 @@ export default function App({ data }) {
     <main className="page">
       <nav className="menu">
         <div className="menu-links">
-          <a href="#about">About me</a>
-          <a href="#skills">My Skills</a>
-          <a href="#work">My Work</a>
-          <a href="#projects">My Projects</a>
-          <a href="#contact">Contact me</a>
+          <a href="#proficiencies">Proficiencies</a>
+          <a href="#work">Work</a>
+          <a href="#projects">Projects</a>
+          <a href="#education">Education</a>
+          <a href="#achievements">Achievements</a>
+          <a href="#contact">Contact</a>
         </div>
         <div className="menu-actions">
           <label className="theme-label">
@@ -40,7 +50,7 @@ export default function App({ data }) {
         </div>
       </nav>
 
-      <header className="hero" id="about">
+      <header className="hero">
         <div className="hero-left">
           {/* <p className="eyebrow">Resume Portfolio</p> */}
           <h1>{data.name}</h1>
@@ -55,85 +65,102 @@ export default function App({ data }) {
         </div>
       </header>
 
-      <Section title="Technical Skills">
-        <div className="skills-grid" id="skills">
-          {Object.entries(data.skills).map(([key, value]) => (
-            <article className="skill-card" key={key}>
-              <h3>{key}</h3>
-              <p>{value}</p>
-            </article>
-          ))}
+      <section className="content-grid">
+        <div className="left-column">
+          <Section title="Proficiencies">
+            <div className="proficiency-groups">
+              {data.proficiencyRatings.map((group) => (
+                <article className="skill-card" key={group.category}>
+                  <h3>{group.category}</h3>
+                  <div className="rating-list">
+                    {group.items.map((item) => (
+                      <div className="rating-item" key={item.name}>
+                        <p>{item.name}</p>
+                        <RatingStars value={item.rating} />
+                        {Array.isArray(item.details) && item.details.length > 0 && (
+                          <p className="rating-subitems">{item.details.join(", ")}</p>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </article>
+              ))}
+            </div>
+          </Section>
         </div>
-      </Section>
-      <Section title="Work">
-        <div id="work">
-          {data.experience.map((item) => (
-            <article key={item.company} className="item">
-              <p className="meta">{item.duration}</p>
-              <h3>{item.role}</h3>
-              <p className="meta">{item.company}</p>
+
+        <div className="right-column">
+          <Section title="Work">
+            <div>
+              {data.experience.map((item) => (
+                <article key={item.company} className="item">
+                  <p className="meta">{item.duration}</p>
+                  <h3>{item.role}</h3>
+                  <p className="meta">{item.company}</p>
+                  <ul>
+                    {item.points.map((point) => (
+                      <li key={point}>{point}</li>
+                    ))}
+                  </ul>
+                </article>
+              ))}
+            </div>
+          </Section>
+
+          <Section title="Projects">
+            <div>
+              {data.projects.map((project) => (
+                <article key={project.name} className="item">
+                  <h3>{project.name}</h3>
+                  <p className="meta">{project.stack}</p>
+                  <p>
+                    <a href={project.website} target="_blank" rel="noreferrer">
+                      Visit Website
+                    </a>
+                  </p>
+                  <ul>
+                    {project.points.map((point) => (
+                      <li key={point}>{point}</li>
+                    ))}
+                  </ul>
+                </article>
+              ))}
+            </div>
+          </Section>
+
+          <section className="split">
+            <Section title="Education">
+              <p>{data.education}</p>
+            </Section>
+            <Section title="Achievements">
               <ul>
-                {item.points.map((point) => (
-                  <li key={point}>{point}</li>
+                {data.achievements.map((item) => (
+                  <li key={item}>{item}</li>
                 ))}
               </ul>
-            </article>
-          ))}
-        </div>
-      </Section>
+            </Section>
+          </section>
 
-      <Section title="Projects">
-        <div id="projects">
-          {data.projects.map((project) => (
-            <article key={project.name} className="item">
-              <h3>{project.name}</h3>
-              <p className="meta">{project.stack}</p>
+          <Section title="Contact">
+            <div className="contact-panel" id="contact">
               <p>
-                <a href={project.website} target="_blank" rel="noreferrer">
-                  Visit Website
+                <strong>Phone:</strong>{" "}
+                <a href={`tel:${data.contact.phone}`}>{data.contact.phone}</a>
+              </p>
+              <p>
+                <strong>Email:</strong>{" "}
+                <a href={`mailto:${data.contact.email}`}>{data.contact.email}</a>
+              </p>
+              <p>
+                <strong>LinkedIn:</strong>{" "}
+                <a href={data.contact.linkedin} target="_blank" rel="noreferrer">
+                  {data.contact.linkedin}
                 </a>
               </p>
-              <ul>
-                {project.points.map((point) => (
-                  <li key={point}>{point}</li>
-                ))}
-              </ul>
-            </article>
-          ))}
+            </div>
+          </Section>
         </div>
-      </Section>
-
-      <section className="split">
-        <Section title="Education">
-          <p>{data.education}</p>
-        </Section>
-        <Section title="Achievements">
-          <ul>
-            {data.achievements.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        </Section>
       </section>
-
-      <Section title="Contact">
-        <div className="contact-panel" id="contact">
-          <p>
-            <strong>Phone:</strong>{" "}
-            <a href={`tel:${data.contact.phone}`}>{data.contact.phone}</a>
-          </p>
-          <p>
-            <strong>Email:</strong>{" "}
-            <a href={`mailto:${data.contact.email}`}>{data.contact.email}</a>
-          </p>
-          <p>
-            <strong>LinkedIn:</strong>{" "}
-            <a href={data.contact.linkedin} target="_blank" rel="noreferrer">
-              {data.contact.linkedin}
-            </a>
-          </p>
-        </div>
-      </Section>
     </main>
   );
 }
