@@ -1,0 +1,64 @@
+{
+  "name": "Dixit Chauhan",
+  "contact": {
+    "phone": "+91-8107244749",
+    "email": "dixitchauhan.iiitk@gmail.com",
+    "linkedin": "https://linkedin.com/in/dixit-chauhan-397667113"
+  },
+  "summary": "Full-Stack Developer with 8+ years of experience building scalable, high-performance web applications using React.js, Node.js, PHP (Laravel/CodeIgniter), and MySQL/MongoDB. Experienced in building scalable APIs, microservices, and cloud-based applications with a focus on performance and reliability.",
+  "skills": {
+    "Frontend": "React.js, JavaScript, HTML5, CSS3",
+    "Backend": "Node.js, Express.js, REST APIs, PHP, Laravel, CodeIgniter, Magento1",
+    "Databases": "MySQL, MongoDB",
+    "Cloud & DevOps": "AWS (EC2, S3, CloudFront, Load Balancer)",
+    "Tools & Platforms": "Git, Jenkins, JIRA, SonarQube, Postman"
+  },
+  "experience": [
+    {
+      "company": "Tata Consultancy Services",
+      "role": "Full Stack Developer",
+      "duration": "Jan 2024 - Present",
+      "points": [
+        "Built and integrated Node.js APIs, improving modular architecture.",
+        "Implemented JWT-based authentication and REST APIs for secure and scalable services."
+      ]
+    },
+    {
+      "company": "Velocity Software Solutions Pvt Ltd",
+      "role": "Software Engineer",
+      "duration": "Aug 2017 - Jan 2024",
+      "points": [
+        "Developed full-stack applications using PHP, React.js, Node.js, and MySQL.",
+        "Led development of Darveys luxury e-commerce platform managing a team of 5 developers.",
+        "Improved performance and scalability of high-traffic applications."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "GeM - Government e Marketplace",
+      "stack": "Node.js, React.js, JWT, REST APIs",
+      "website": "https://gem.gov.in/",
+      "points": [
+        "Developed and enhanced the frontend application using React.js.",
+        "Designed and integrated Node.js-based REST APIs to support frontend modules and improve system modularity."
+      ]
+    },
+    {
+      "name": "Darveys.com",
+      "stack": "React JS, PHP (Laravel, CodeIgniter, and Magento1), MySQL",
+      "website": "https://www.darveys.com/",
+      "points": [
+        "Led a team of 5 developers to deliver a high-performing e-commerce platform.",
+        "Developed the frontend from scratch using ReactJS, ensuring a responsive and engaging user experience.",
+        "Customized and optimized Magento1 backend for faster performance and seamless scalability.",
+        "Implemented a custom product filter and catalog positioning module, enhancing product discovery and customer journey."
+      ]
+    }
+  ],
+  "education": "B.Tech, Indian Institute of Information Technology Kota, 2017 | CGPA: 8",
+  "achievements": [
+    "Contributed to large-scale cloud migration project at TCS.",
+    "\"Pat on the Back\" award at Velocity Software Solutions for outstanding performance in the Darveys project."
+  ]
+}

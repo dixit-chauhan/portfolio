@@ -1,0 +1,178 @@
+:root {
+  color-scheme: dark;
+  --bg: #090d12;
+  --card: #111821;
+  --text: #e8edf4;
+  --muted: #95a8bc;
+  --line: #24374c;
+  --accent: #87b5ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.page {
+  max-width: 980px;
+  margin: 40px auto;
+  padding: 0 16px 28px;
+}
+
+.menu {
+  position: sticky;
+  top: 10px;
+  z-index: 5;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+  padding: 10px 12px;
+  background: rgba(17, 24, 33, 0.86);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+}
+
+.menu a {
+  padding: 6px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 0.9rem;
+}
+
+.hero,
+.section,
+.item {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 18px;
+}
+
+.hero {
+  margin-bottom: 16px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.hero-summary {
+  margin-top: 12px;
+  color: #d5deea;
+}
+
+.about-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.about-pills span {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 4px 10px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+
+h2 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+h3 {
+  font-size: 1rem;
+  margin: 0 0 6px;
+}
+
+.split {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 2fr 1fr;
+}
+
+.skills-grid {
+  display: grid;
+  gap: 10px;
+}
+
+.skill-card {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.01);
+}
+
+.skill-card p {
+  color: #d5deea;
+}
+
+.contact-panel p {
+  margin-bottom: 10px;
+}
+
+ul {
+  margin: 8px 0 0;
+  padding-left: 16px;
+}
+
+li {
+  margin-bottom: 6px;
+  color: #d4dde7;
+}
+
+.section {
+  margin-bottom: 12px;
+}
+
+.item {
+  margin-bottom: 10px;
+}
+
+.meta {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+@media (max-width: 800px) {
+  .split {
+    grid-template-columns: 1fr;
+  }
+}
