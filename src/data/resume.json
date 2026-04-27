@@ -107,7 +107,11 @@
       ]
     }
   ],
-  "education": "B.Tech, Indian Institute of Information Technology Kota, 2017 | CGPA: 8",
+  "education": {
+    "duration": "2013 - 2017",
+    "degree": "B.Tech in Computer Science and Engineering",
+    "institution": "Indian Institute of Information Technology Kota"
+  },
   "achievements": [
     "Contributed to large-scale cloud migration project at TCS.",
     "\"Pat on the Back\" award at Velocity Software Solutions for outstanding performance in the Darveys project."

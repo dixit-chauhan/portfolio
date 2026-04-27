@@ -94,9 +94,9 @@ export default function App({ data }) {
             <div>
               {data.experience.map((item) => (
                 <article key={item.company} className="item">
-                  <p className="meta">{item.duration}</p>
-                  <h3>{item.role}</h3>
-                  <p className="meta">{item.company}</p>
+                  <p className="meta" style={{float: 'right'}}>{item.duration}</p>
+                  <h3>{item.company}</h3>
+                  <p className="meta">{item.role}</p>
                   <ul>
                     {item.points.map((point) => (
                       <li key={point}>{point}</li>
@@ -128,9 +128,11 @@ export default function App({ data }) {
             </div>
           </Section>
 
-          <section className="split">
+          {/* <section className="split"> */}
             <Section title="Education">
-              <p>{data.education}</p>
+              <p className="meta" style={{float: 'right'}}>{data.education.duration}</p>
+              <h3>{data.education.degree}</h3>
+              <p className="meta">{data.education.institution}</p>
             </Section>
             <Section title="Achievements">
               <ul>
@@ -139,7 +141,7 @@ export default function App({ data }) {
                 ))}
               </ul>
             </Section>
-          </section>
+          {/* </section> */}
 
           <Section title="Contact">
             <div className="contact-panel" id="contact">
