@@ -21,7 +21,7 @@
         { "name": "HTML", "rating": 3 },
         { "name": "CSS", "rating": 3 },
         { "name": "JavaScript", "rating": 3.5 },
-        { "name": "React.js", "rating": 3.5 }
+        { "name": "React.js", "rating": 4 }
       ]
     },
     {
@@ -48,7 +48,7 @@
         { "name": "Copilot", "rating": 3 },
         { "name": "Cursor", "rating": 3 },
         { "name": "Git", "rating": 4 },
-        { "name": "Jenkins", "rating": 3 },
+        { "name": "Jenkins", "rating": 2 },
         { "name": "JIRA", "rating": 3 },
         { "name": "Postman", "rating": 3 }
       ]
@@ -58,7 +58,7 @@
       "items": [
         {
           "name": "AWS",
-          "rating": 2.5,
+          "rating": 2,
           "details": ["EC2", "S3", "CloudFront", "Load Balancer"]
         }
       ]
